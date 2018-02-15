@@ -22,11 +22,11 @@ from .models import {{cookiecutter.model_name}}
 # Database Setup
 #################################################
 
-# @app.before_first_request
-# def setup():
-#     # Recreate database each time for demo
-#     # db.drop_all()
-#     db.create_all()
+@app.before_first_request
+def setup():
+    # Recreate database each time for demo
+    db.drop_all()
+    db.create_all()
 
 
 # create route that renders index.html template
