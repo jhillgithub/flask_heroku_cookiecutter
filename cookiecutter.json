@@ -1,5 +1,6 @@
 {
-    "app_name": "app",
+    "repo_name": "my_app"
+,    "app_name": "app",
     "model_name": "User",
     "table_name": "user"
 }
