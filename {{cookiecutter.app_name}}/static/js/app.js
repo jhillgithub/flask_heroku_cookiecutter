@@ -5,15 +5,16 @@ function buildPlot() {
 
         console.log(response);
 
-        var data = response
+        var names = response.names;
+        var heights = response.heights;
 
         var data = [{
-            x: response,
-            y: Plotly.d3.range(0, response.length),
+            x: names,
+            y: heights,
             type: 'bar'
         }];
 
-        Plotly.newPlot('plot', data);
+        Plotly.plot('plot', data);
 
     });
 }

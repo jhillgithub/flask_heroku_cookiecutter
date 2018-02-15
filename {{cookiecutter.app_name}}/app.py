@@ -1,5 +1,6 @@
 # import necessary libraries
 import os
+import random
 from flask import (
     Flask,
     render_template,
@@ -27,6 +28,11 @@ def setup():
     # Recreate database each time for demo
     db.drop_all()
     db.create_all()
+    first = {{cookiecutter.model_name}}(name='test1')
+    second = {{cookiecutter.model_name}}(name='test2')
+    db.session.add(first)
+    db.session.add(second)
+    db.session.commit()
 
 
 # create route that renders index.html template
@@ -37,7 +43,11 @@ def home():
 @app.route("/api/data")
 def api_data():
     results = db.session.query({{cookiecutter.model_name}}.name).all()
-    return jsonify(results)
+    data = {
+        "names": [result[0] for result in results],
+        "heights": [random.randint(10, 100) for result in results]
+    }
+    return jsonify(data)
 
 if __name__ == "__main__":
     app.run()
