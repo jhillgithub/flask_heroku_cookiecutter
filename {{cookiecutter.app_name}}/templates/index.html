@@ -1,25 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-
+{% raw %}
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>{{cookiecutter.app_name}}</title>
-    <link rel="stylesheet" href="{{{{ url_for('static', filename='css/style.css') }}}}">
+    <title>App Name Here</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 
 <body>
     <div class="container">
         <div class="jumbotron" style="text-align: center">
             <h1>Hello!</h1>
-            <p>Welcome to the {{cookiecutter.app_name}} app!</p>
+            <p>Welcome to the app!</p>
         </div>
         <div class="row col-md-12" id="plot"></div>
     </div>
 
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-    <script src="{{{{ url_for('static', filename='js/app.js') }}}}"></script>
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
 </body>
-
+{% endraw %}
 </html>
