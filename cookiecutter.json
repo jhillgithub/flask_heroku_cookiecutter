@@ -1,5 +1,5 @@
 {
     "app_name": "app",
     "model_name": "User",
-    "table_name": "user",
+    "table_name": "user"
 }
